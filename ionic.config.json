@@ -1,0 +1,7 @@
+{
+  "name": "Trekk-admin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
