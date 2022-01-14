@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>fort</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" padding>
+  <!-- #form="ngForm" -->
+  <form #addform="ngForm" (ngSubmit)="savefort(addform)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Add Fort</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label>Select State</ion-label>
+              <ion-select #c (ionChange)="getAllCities(c.value)" placeholder="Select One">
+                <ion-select-option *ngFor="let state of states" [value]="state.id">{{state.state}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label>Select City</ion-label>
+              <ion-select #city (ionChange)="setCityId(city.value)" placeholder="Select One">
+                <ion-select-option *ngFor="let city of cities" [value]="city.id">{{city.city}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-input name="id" type="text" placeholder="id" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="fortNameE" type="text" placeholder="Fort Name Eng" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="fortNameM" type="text" placeholder="Fort Name Mar" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="submit" [disabled]="addform.invalid" expand="block">Save</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

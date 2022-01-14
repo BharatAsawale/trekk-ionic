@@ -8,8 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'fortdetails',
+    loadChildren: () => import('./fortdetails/fortdetails.module').then( m => m.FortdetailsPageModule)
+  },
+  {
+    path: 'fort',
+    loadChildren: () => import('./fort/fort.module').then( m => m.FortPageModule)
+  },
+  {
+    path: 'fort-option',
+    loadChildren: () => import('./fort-option/fort-option.module').then( m => m.FortOptionPageModule)
   },
 ];
 
