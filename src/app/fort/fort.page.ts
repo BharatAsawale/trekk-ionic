@@ -67,7 +67,7 @@ export class FortPage implements OnInit {
     console.log("fortReq",this.fortReq);
 
     this.fortReqMar.id=this.fortdata.id;
-    this.fortReqMar.fortName=this.fortdata.fortNameE;
+    this.fortReqMar.fortName=this.fortdata.fortNameM;
     this.fortReqMar.cityId=this.cityId;
     console.log("fortReqMar",this.fortReqMar);
 

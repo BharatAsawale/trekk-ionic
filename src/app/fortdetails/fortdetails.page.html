@@ -14,6 +14,18 @@
           </div>
           <div padding>
             <ion-item>
+              <ion-label>Select State</ion-label>
+              <ion-select #c (ionChange)="getAllCities(c.value)" placeholder="Select One">
+                <ion-select-option *ngFor="let state of states" [value]="state.id">{{state.state}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label>Select City</ion-label>
+              <ion-select #city (ionChange)="getAllForts(city.value)" placeholder="Select One">
+                <ion-select-option *ngFor="let city of cities" [value]="city.id">{{city.city}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
               <ion-label>Select Fort</ion-label>
               <ion-select placeholder="Select One">
                 <ion-select-option *ngFor="let fort of forts" [value]="fort.id">{{fort.fortName}}</ion-select-option>

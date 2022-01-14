@@ -45,7 +45,7 @@ export class FortService {
     });
   }
 
-  AllForts():Observable<Fort[]>{
-    return this.httpClient.get<Fort[]>(`${environment.TREKK_SERVER_ADDRESS}/fort/all`);
+  AllForts(id):Observable<Fort[]>{
+    return this.httpClient.get<Fort[]>(`${environment.TREKK_SERVER_ADDRESS}/fort/city/${id}`);
   }
 }
